@@ -66,7 +66,7 @@ COMPLEX_TYPES = {
 
     'ns19': [
         'TransactionSearch',
-        'GetPostingTransactionSummaryRequest'
+        'GetPostingTransactionSummaryResult'
     ],
 
     # urn:purchases_2017_2.transactions.webservices.netsuite.com
