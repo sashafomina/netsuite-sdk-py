@@ -19,7 +19,8 @@ COMPLEX_TYPES = {
         'StatusDetail',
         'TokenPassport',
         'TokenPassportSignature',
-        'WsRole'
+        'WsRole',
+        'GetPostingTransactionSummaryResult'
     ],
 
     # ns4: https://webservices.netsuite.com/xsd/platform/v2017_2_0/messages.xsd
@@ -65,8 +66,7 @@ COMPLEX_TYPES = {
     ],
 
     'ns19': [
-        'TransactionSearch',
-        'GetPostingTransactionSummaryResult'
+        'TransactionSearch'
     ],
 
     # urn:purchases_2017_2.transactions.webservices.netsuite.com
