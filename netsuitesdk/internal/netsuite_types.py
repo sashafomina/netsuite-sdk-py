@@ -2,6 +2,7 @@
 Declares all NetSuite types which are available through attribute lookup `ns.<type>`
 of a :class:`~netsuitesdk.client.NetSuiteClient` instance `ns`.
 """
+STUFF= 'aaaaaahhhh'
 
 COMPLEX_TYPES = {
     'ns0': [
@@ -65,6 +66,7 @@ COMPLEX_TYPES = {
 
     'ns19': [
         'TransactionSearch',
+        'GetPostingTransactionSummaryRequest'
     ],
 
     # urn:purchases_2017_2.transactions.webservices.netsuite.com
