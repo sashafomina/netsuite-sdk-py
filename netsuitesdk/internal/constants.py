@@ -2,7 +2,7 @@
 
 SEARCH_RECORD_TYPES = [
     'account',
-    'getPostingTransactionSummaryResult'
+    'getPostingTransactionSummaryResult',
     'accountingPeriod',
     'accountingTransaction',
     'billingAccount',
