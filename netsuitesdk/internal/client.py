@@ -16,6 +16,7 @@ from zeep.cache import SqliteCache
 from zeep.transports import Transport
 from zeep.exceptions import Fault
 from zeep.exceptions import LookupError as ZeepLookupError
+from zeep.plugins import HistoryPlugin
 
 from .constants import *
 from .exceptions import *
@@ -68,8 +69,12 @@ class NetSuiteClient:
         else:
             transport = None
 
+        # Initialize History Logging
+        self._history = HistoryPlugin()
+
         # Initialize the Zeep Client
-        self._client = Client(self._wsdl_url, transport=transport)
+        self._client = Client(self._wsdl_url, transport=transport, 
+        					  plugins=[self._history])
 
         # default service points to wrong data center. need to create a new service proxy and replace the default one
         self._service_proxy = self._client.create_service('{urn:platform_2019_1.webservices.netsuite.com}NetSuiteBinding', self._datacenter_url)
