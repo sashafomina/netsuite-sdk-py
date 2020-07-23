@@ -12,6 +12,7 @@ import random
 import time
 
 from zeep import Client
+from requests import Session
 from zeep.cache import SqliteCache
 from zeep.transports import Transport
 from zeep.exceptions import Fault
@@ -65,7 +66,8 @@ class NetSuiteClient:
             path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cache.db')
             timeout = caching_timeout
             cache = SqliteCache(path=path, timeout=timeout)
-            transport = Transport(cache=cache)
+            session=Session()
+            transport = Transport(cache=cache,session)
         else:
             transport = None
 
