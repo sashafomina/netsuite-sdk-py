@@ -67,7 +67,7 @@ class NetSuiteClient:
             timeout = caching_timeout
             cache = SqliteCache(path=path, timeout=timeout)
             session=Session()
-            transport = Transport(cache=cache,session)
+            transport = Transport(cache=cache,session=session)
         else:
             transport = None
 
