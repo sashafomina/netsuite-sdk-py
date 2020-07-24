@@ -424,7 +424,7 @@ class NetSuiteClient:
             setattr(basic_search, key, value)
         return basic_search
 
-    def search(self, searchRecord):
+    def search(self, searchRecord, **kwargs):
         """
         Make a search request to retrieve an object of type recordType
         specified by internalId. All NetSuite types available for a search
@@ -442,7 +442,7 @@ class NetSuiteClient:
                     list records: the actual records found
         """
         response = self.request('search',
-                                searchRecord=searchRecord)
+                                searchRecord=searchRecord, **kwargs)
 
         result = response.body.searchResult
         status = result.status
