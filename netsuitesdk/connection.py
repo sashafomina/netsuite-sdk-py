@@ -14,7 +14,7 @@ from .internal.client import NetSuiteClient
 
 class NetSuiteConnection:
     def __init__(self, account, consumer_key, consumer_secret, token_key, token_secret):
-        self.ns_client = NetSuiteClient(account=account)
+        ns_client = NetSuiteClient(account=account)
         ns_client.connect_tba(
             consumer_key=consumer_key,
             consumer_secret=consumer_secret,
@@ -32,3 +32,4 @@ class NetSuiteConnection:
         self.journal_entries = JournalEntries(ns_client)
         self.employees = Employees(ns_client)
         self.expense_reports = ExpenseReports(ns_client)
+        self.ns_client = ns_client
