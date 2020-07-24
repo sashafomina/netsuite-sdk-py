@@ -51,9 +51,9 @@ class PaginatedSearch:
             return len(self.records)
         return 0
 
-    def search(self):
+    def search(self, **kwargs):
         """ Call the netsuite operation `search` """
-        self._result = self._ns.search(searchRecord=self.search_record)
+        self._result = self._ns.search(searchRecord=self.search_record, **kwargs)
 
     def goto_page(self, page_index):
         """ After a search was performed, this method utilizes the NetSuite
